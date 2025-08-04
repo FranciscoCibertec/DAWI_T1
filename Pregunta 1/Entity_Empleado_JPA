@@ -1,0 +1,24 @@
+import jakarta.persistence.*;
+import java.util.Date;
+import java.util.List;
+
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Empleado {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long empleadoId;
+
+    private String nombre;
+
+    @Column(unique = true)
+    private String email;
+
+    @Temporal(TemporalType.DATE)
+    private Date fechaIngreso;
+
+    @OneToMany(mappedBy = "empleado", cascade = CascadeType.ALL)
+    private List<EmpleadoPago> pagos;
+
+}
