@@ -1,0 +1,21 @@
+import jakarta.persistence.*;
+import java.util.Date;
+import java.util.List;
+
+@Entity
+public class Autor {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long autorId;
+
+    private String nombre;
+    private String nacionalidad;
+
+    @Temporal(TemporalType.DATE)
+    private Date fechaNacimiento;
+
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL)
+    private List<Libro> libros;
+
+    // Getters y Setters
+}
