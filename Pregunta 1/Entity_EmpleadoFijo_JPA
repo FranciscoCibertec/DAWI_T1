@@ -1,0 +1,11 @@
+import jakarta.persistence.*;
+
+@Entity
+public class EmpleadoFijo extends Empleado {
+
+    private Double salarioBase;
+
+    private Integer diasVacaciones;
+
+    // Getters y Setters
+}
