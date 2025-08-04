@@ -1,0 +1,11 @@
+import jakarta.persistence.*;
+
+@Entity
+public class EmpleadoFreelance extends Empleado {
+
+    private Double tarifaHora;
+
+    private Integer horasSemanales;
+
+    // Getters y Setters
+}
