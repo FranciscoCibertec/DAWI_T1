@@ -1,0 +1,7 @@
+Un sistema de gestión de biblioteca necesita llevar el control de los libros disponibles, sus autores, los usuarios registrados y los préstamos realizados.
+
+Cada libro tiene un único autor.
+
+Un usuario puede solicitar varios préstamos, y un libro puede ser prestado múltiples veces.
+
+Los préstamos registran la fecha de inicio, devolución y el estado del préstamo (activo, devuelto, etc.).
