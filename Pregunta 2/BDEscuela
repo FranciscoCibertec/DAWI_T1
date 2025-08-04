@@ -1,0 +1,65 @@
+use escuela;
+CREATE TABLE curso (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    creditos INT NOT NULL
+);
+
+CREATE TABLE alumno (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL
+);
+
+CREATE TABLE matricula (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    alumno_id BIGINT NOT NULL,
+    curso_id BIGINT NOT NULL,
+    FOREIGN KEY (alumno_id) REFERENCES alumno(id),
+    FOREIGN KEY (curso_id) REFERENCES curso(id)
+);
+INSERT INTO curso (nombre, creditos) VALUES
+('Matemáticas I', 4),
+('Lengua y Comunicación', 3),
+('Ciencias Naturales', 4),
+('Historia Universal', 3),
+('Programación Básica', 5),
+('Base de Datos', 4),
+('Estadística', 3),
+('Inglés I', 3),
+('Física General', 4),
+('Química Orgánica', 4);
+
+INSERT INTO alumno (nombre, email) VALUES
+('Carlos Pérez', 'cperez1@example.com'),
+('Ana Torres', 'atorres2@example.com'),
+('Luis García', 'lgarcia3@example.com'),
+('María Díaz', 'mdiaz4@example.com'),
+('José Fernández', 'jfernandez5@example.com'),
+('Lucía Mendoza', 'lmendoza6@example.com'),
+('Pedro Ramírez', 'pramirez7@example.com'),
+('Sofía Morales', 'smorales8@example.com'),
+('Jorge Herrera', 'jherrera9@example.com'),
+('Paula Chávez', 'pchavez10@example.com'),
+('Daniel Soto', 'dsoto11@example.com'),
+('Valeria Guzmán', 'vguzman12@example.com'),
+('Andrés Ríos', 'arios13@example.com'),
+('Isabel Paredes', 'iparedes14@example.com'),
+('Ricardo Salinas', 'rsalinas15@example.com'),
+('Claudia León', 'cleon16@example.com'),
+('Tomás Vega', 'tvega17@example.com'),
+('Gabriela Rivas', 'grivas18@example.com'),
+('Manuel Campos', 'mcampos19@example.com'),
+('Elena Quispe', 'equispe20@example.com');
+
+INSERT INTO matricula (alumno_id, curso_id) VALUES
+(1, 1), (1, 3), (1, 5),
+(2, 2), (2, 4), (2, 6),
+(3, 1), (3, 7), (3, 8),
+(4, 2), (4, 3), (4, 9),
+(5, 5), (5, 6), (5, 10),
+(6, 4), (6, 7), (6, 9),
+(7, 1), (7, 2), (7, 6),
+(8, 3), (8, 5), (8, 8),
+(9, 4), (9, 6), (9, 10),
+(10, 7), (10, 8), (10, 9);
